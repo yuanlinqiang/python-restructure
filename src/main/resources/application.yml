@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+auth.exculsive.urls: /**
+#配置文件加密
+---
+server:
+  port: 8088
+spring:
+  profiles: dev
+  redis:
+    host: 127.0.0.1
+    password:
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/g-search?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: false
+  data:
+    neo4j:
+      url: http://10.3.10.205:7474
+      username: neo4j
+      password: neo4j123
+  devtools:
+    restart:
+      enabled: true
